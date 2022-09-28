@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "358228217549",
+    "project_id": "universal-b071b",
+    "storage_bucket": "universal-b071b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358228217549:android:ee183de07d9f96d5fce384",
+        "android_client_info": {
+          "package_name": "com.megWorld.universal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358228217549-bp4g4kaf9s7s7nod3q8bpudaa4q55upc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.megWorld.universal",
+            "certificate_hash": "e70211f8280621647ef0c8358a2fdeadad0b243f"
+          }
+        },
+        {
+          "client_id": "358228217549-qj5m05ap22nbibputvivkffgdacdfbbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWBJ8MzG49mfO-0kuoU4P24OBrwaq9TPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358228217549-qj5m05ap22nbibputvivkffgdacdfbbk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

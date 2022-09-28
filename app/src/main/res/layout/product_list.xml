@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/productCard"
+        app:cardCornerRadius="7dp"
+        android:backgroundTint="@color/white"
+        android:background="#e0f3ff"
+        android:clickable="true"
+        android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#e0f3ff">
+
+        <!-- Media -->
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/round_outline"
+
+            android:contentDescription="@string/content_description_media"
+            android:elevation="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tomato" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="10dp"
+            android:background="#e0f3ff"
+            android:paddingEnd="10dp">
+
+            <!-- Title, secondary and supporting text -->
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="#e0f3ff"
+                android:fontFamily="@font/sfdisplaysemibold"
+                android:maxEms="10"
+                android:maxLines="1"
+                android:text="@string/tomato"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/productQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productName"
+                android:background="#e0f3ff"
+                android:text="@string/_1kg"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/black_overlay" />
+
+
+        </RelativeLayout>
+
+        <!-- Buttons -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="10dp"
+            android:background="#e0f3ff"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/productPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/sfdisplaybold"
+                android:text="@string/_28"
+                android:textColor="#558B2F"
+                android:background="#e0f3ff"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/add_to_cart"
+                android:src="@drawable/ic_add4"
+                app:backgroundTint="#00B0FF"
+                app:elevation="6dp"
+                android:background="#e0f3ff"
+                app:fabCustomSize="35dp"
+                app:hoveredFocusedTranslationZ="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/productPrice"
+                app:layout_constraintTop_toTopOf="parent"
+                app:pressedTranslationZ="6dp"
+                app:rippleColor="@android:color/white"
+                app:tint="@color/white"
+                tools:ignore="ImageContrastCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

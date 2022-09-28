@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.fragement.ProductPageFragment">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productMainPageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/alataregular"
+            android:text="@string/tomato"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/priceTag"
+            app:layout_constraintTop_toBottomOf="@+id/productMainPageTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productMainPagePriceTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                android:fontFamily="@font/alataregular"
+                android:text="@string/ruppes"
+                android:textColor="#2ED535"
+                android:textSize="20sp"
+              />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productMainPagePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                android:fontFamily="@font/alataregular"
+                android:text="@string/_45"
+                android:textColor="#2ED535"
+                android:textSize="20sp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/black" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productMainPageQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                android:fontFamily="@font/sfdisplaylight"
+                android:text="@string/_1kg"
+                android:textColor="#919191"
+                android:textSize="20sp"
+               />
+        </LinearLayout>
+
+
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/productCarousel"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:iss_auto_cycle="true"
+            app:iss_error_image="@drawable/error"
+            app:iss_selected_dot="@drawable/selected_dot"
+            app:iss_unselected_dot="@drawable/unselected_dot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/priceTag" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/wishlistBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabCustomSize="30dp"
+            android:src="@drawable/heart"
+            android:tint="@color/black"
+            app:borderWidth ="0.5dp"
+            android:elevation="6dp"
+            app:rippleColor="#FFEB3B"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/productCarousel"
+            app:layout_constraintEnd_toEndOf="@+id/productCarousel"
+            app:layout_constraintHorizontal_bias="0.954"
+            app:layout_constraintStart_toStartOf="@+id/productCarousel"
+            app:layout_constraintTop_toTopOf="@+id/productCarousel"
+            app:layout_constraintVertical_bias="0.069" />
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/quantityContainer"
+            app:layout_constraintTop_toBottomOf="@+id/productCarousel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@android:color/transparent"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            >
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/decrementBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="#FFFFFF"
+                android:backgroundTintMode="src_over"
+                android:elevation="6dp"
+                android:layout_gravity="center_vertical"
+                app:collapsedSize="44dp"
+                app:icon="@drawable/minus_sign"
+                app:iconTint="@color/primary_color"
+                app:strokeColor="#ABCCCACA"
+                app:strokeWidth="0dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/_0"
+                android:textIsSelectable="false"
+                android:autofillHints="0"
+                android:maxLength="4"
+                android:text="@string/_0"
+                android:id="@+id/quantityInput"
+                android:layout_gravity="center_vertical"
+                android:inputType="number"
+                android:backgroundTint="@android:color/transparent"/>
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/incrementBtn"
+                app:collapsedSize="44dp"
+                android:backgroundTint="#FFFFFF"
+                android:backgroundTintMode="src_over"
+                app:strokeColor="#ABCCCACA"
+                app:strokeWidth="0dp"
+                android:elevation="16dp"
+                android:layout_margin="5dp"
+                app:icon="@drawable/ic_add4"
+                app:iconTint="@color/primary_color"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="end"
+            android:id="@+id/ratingContainer"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toEndOf="@+id/quantityContainer"
+            app:layout_constraintTop_toBottomOf="@+id/productCarousel">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingStar"
+                android:padding="2dp"
+                android:background="@drawable/rating_box"
+                android:text="@string/_4_7"
+                android:textColor="@color/white"
+                android:gravity="center_vertical"
+                android:paddingStart="5dp"
+                android:paddingEnd="7dp"
+                app:drawableLeftCompat="@drawable/ic_star" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/_90_ratings"
+                android:textColor="@color/black_overlay"
+                android:fontFamily="@font/alataregular"
+
+                />
+        </LinearLayout>
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/productMainPageAddToCart"
+            app:layout_constraintTop_toBottomOf="@+id/ratingContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/add_to_cart"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:textColor="@color/white"
+            app:icon="@drawable/ic_shopping_cart"
+            app:iconGravity="textStart"
+            app:iconTint="@color/white"
+            android:elevation="10dp"
+            app:rippleColor="#083467"
+            app:pressedTranslationZ="6dp"
+            android:textAlignment="center"
+            android:backgroundTint="@color/primary_color"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/productDescriptionTitle"
+            app:layout_constraintTop_toBottomOf="@+id/productMainPageAddToCart"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/product_description"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sfdisplaysemibold"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/productDescription"
+            app:layout_constraintTop_toBottomOf="@+id/productDescriptionTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/description_for_product"
+            android:textColor="@color/black_overlay"
+            android:fontFamily="@font/sfdisplaymedium"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:paddingStart="15dp"
+
+            />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>
