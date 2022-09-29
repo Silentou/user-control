@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.*
@@ -65,9 +66,10 @@ class HomeFragment : Fragment() {
         val imageHome = sharedPreferences?.getString(Constants.LOGGED_IN_IMAGE, "")!!
         GlideLoader(requireActivity()).loadUserPicture(imageHome,userPic)
 
+
         //getAllData()
         categoryInit()
-        productInit()
+        //productInit()
         carouselView()
     }
 
@@ -94,21 +96,21 @@ private fun carouselView(){
     }
 }
 
-    private fun productLoad(){
-        RetrofitInstance.getApiInterface()?.getProductDetails()?.enqueue(object :
-        Callback<ProductObject>{
-            override fun onResponse(call: Call<ProductObject>, response: Response<ProductObject>) {
-                if (response.isSuccessful){
-                    mProductList = response.body()?.acf as ArrayList<ProductObject>
-                }
-            }
-
-            override fun onFailure(call: Call<ProductObject>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-
-        })
-    }
+//    private fun productLoad(){
+//        RetrofitInstance.getApiInterface()?.getProductDetails()?.enqueue(object :
+//        Callback<ProductObject>{
+//            override fun onResponse(call: Call<ProductObject>, response: Response<ProductObject>) {
+//                if (response.isSuccessful){
+//                    mProductList = response.body()?.acf as ArrayList<ProductObject>
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<ProductObject>, t: Throwable) {
+//                TODO("Not yet implemented")
+//            }
+//
+//        })
+//    }
 
     private fun productInit() {
         gridLayoutManager =  GridLayoutManager(activity, 2)
